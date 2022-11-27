@@ -48,7 +48,7 @@ public class Champion_abilitiesRepository {
         Connection conn = manager.open();
         PreparedStatement statement = null;
         try{
-            statement = conn.prepareStatement("INSERT INTO alumno(champion_name, champion_description, champion, effect, cost, range) VALUES (?, ?, ?, ?, ?)");
+            statement = conn.prepareStatement("INSERT INTO champion_abilities(champion_name, champion_description, champion, effect, cost, range) VALUES (?, ?, ?, ?, ?)");
             statement.setString(1, ca.getChampion_name());
             statement.setString(2, ca.getChampion_description());
             statement.setInt(3, ca.getChampion().getId());
@@ -65,14 +65,15 @@ public class Champion_abilitiesRepository {
         }
     }
 
-    public void updateChampion(int id, int champion) {
+    public void updateChampion(int id, int champion, String champion_name, String title, String lore, String tags) {
         Connection conn = manager.open();
         PreparedStatement statement = null;
         try{
-            statement = conn.prepareStatement("update champion set champion = ? where id = ?");
-            statement.setInt(1, champion);
-            statement.setInt(2, id);
-            statement.executeUpdate();
+            statement = conn.prepareStatement("update champion set champion_name = ?, title = ?, lore = ?, tags = ? where id = ?");
+            statement.setString(1, champion_name);
+            statement.setString(2, title);
+            statement.setString(3, lore);
+            statement.setString(4, tags);
         } catch (SQLException e){
             e.printStackTrace();
             throw new RuntimeException();

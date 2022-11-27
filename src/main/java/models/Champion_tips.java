@@ -11,10 +11,10 @@ public class Champion_tips {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public Champions getChampion() {
+	public models.Champions getChampion() {
 		return champion;
 	}
-	public void setChampion(Champions champion) {
+	public void setChampion(models.Champions champion) {
 		this.champion = champion;
 	}
 	public String getTip() {

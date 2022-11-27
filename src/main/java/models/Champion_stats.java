@@ -6,10 +6,10 @@ public class Champion_stats {
 	private Integer stat_value;
 	private Integer modifier_per_level;
 	
-	public Champions getChampion() {
+	public models.Champions getChampion() {
 		return champion;
 	}
-	public void setChampion(Champions champion) {
+	public void setChampion(models.Champions champion) {
 		this.champion = champion;
 	}
 	public String getStat_name() {
