@@ -16,5 +16,8 @@
     <br/>
     	<a href="Runes/RuneList.jsp">Listado de Runas</a>
     <br/>
+    <br/>
+    	<a href="Champion_abilities/Champion_abilitiesList.jsp">Listado de habilidades</a>
+    <br/>
 </body>
 </html>

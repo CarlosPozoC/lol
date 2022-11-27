@@ -33,12 +33,15 @@ public class ChampionUpdateServlet extends BaseServlet {
 	private void doYourThing(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 		ChampionsRepository repository = new ChampionsRepository();
 		Integer id = Integer.parseInt(req.getParameter("id"));
+		Integer champion = Integer.parseInt(req.getParameter("champion"));
 		redirect(req, resp, "/Champions/ChampionUpdate.jsp");
 	}
 
 	private void doYourOtherThing(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 		Integer id = Integer.parseInt(req.getParameter("id"));
+		Integer champion = Integer.parseInt(req.getParameter("champion"));
 		req.setAttribute("id", id);
+		req.setAttribute("champion", champion);
 		redirect(req, resp, "/Champions/ChampionUpdate.jsp");
 	}
 }

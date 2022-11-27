@@ -43,7 +43,7 @@ public class ChampionsRepository {
         PreparedStatement statement = null;
         try{
             statement = conn.prepareStatement("INSERT INTO champions(champion_name, title, lore, tags) VALUES (?, ?, ?, ?)");
-            statement.setString(1, c.getChampion_name());
+            statement.setString(2, c.getChampion_name());
             statement.setString(3, c.getTitle());
             statement.setString(4, c.getLore());
             statement.setString(5, c.getTags());
@@ -57,21 +57,21 @@ public class ChampionsRepository {
         }
     }
     
-    public Champions findById(int idChampion){
+    public Champions findById(int champion){
         Connection conn = manager.open();
         PreparedStatement statement = null;
-        Champions champion = new Champions();
+        Champions c = new Champions();
         ResultSet rs = null;
         try{
-            statement = conn.prepareStatement("select * from champion where id=?");
-            statement.setInt(1, idChampion);
+            statement = conn.prepareStatement("select * from champions where id=?");
+            statement.setInt(1, champion);
             rs= statement.executeQuery();
             while (rs.next()) {
-            	champion.setId(rs.getInt("id"));
-            	champion.setChampion_name(rs.getString("champion_name"));
-            	champion.setTitle(rs.getString("title"));
-            	champion.setLore(rs.getString("lore"));
-            	champion.setTags(rs.getString("tags"));
+            	c.setId(rs.getInt("id"));
+            	c.setChampion_name(rs.getString("champion_name"));
+            	c.setTitle(rs.getString("title"));
+            	c.setLore(rs.getString("lore"));
+            	c.setTags(rs.getString("tags"));
             }
         } catch (SQLException e){
             e.printStackTrace();
@@ -81,6 +81,6 @@ public class ChampionsRepository {
             manager.close(statement);
             manager.close(conn);
         }
-        return  champion;
+        return  c;
     }
 }

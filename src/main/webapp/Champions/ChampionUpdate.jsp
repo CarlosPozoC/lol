@@ -8,10 +8,10 @@
 </head>
 <body>
 <br/>
-<form action="/AlumnoUpdate" method="post">
+<form action="/ChampionUpdate" method="post">
 	<span>Champion:</span>
 	<input type="hidden" id="id" name="id" value="${id}">
-	<input type="champion_name" id="champion" name="champion" value="${champion}">
+	<input type="number" id="champion" name="champion" value="${champion}">
 	<br />
 	<input type="submit">
 </form>

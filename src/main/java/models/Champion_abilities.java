@@ -2,22 +2,22 @@ package models;
 
 public class Champion_abilities {
 	private Integer id;
+	private Integer champion;
 	private String champion_name;
 	private String champion_description;
-	private Champions champion;
 	private String effect;
 	private String cost;
-	private Integer range;
+	private Integer rango;
 	public Integer getId() {
 		return id;
 	}
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public models.Champions getChampion() {
+	public Integer getChampion() {
 		return champion;
 	}
-	public void setChampion(models.Champions champion) {
+	public void setChampion(Integer champion) {
 		this.champion = champion;
 	}
 	public String getChampion_name() {
@@ -44,11 +44,11 @@ public class Champion_abilities {
 	public void setCost(String cost) {
 		this.cost = cost;
 	}
-	public Integer getRange() {
-		return range;
+	public Integer getRango() {
+		return rango;
 	}
-	public void setRange(Integer range) {
-		this.range = range;
+	public void setRango(Integer rango) {
+		this.rango = rango;
 	}
 	
 	

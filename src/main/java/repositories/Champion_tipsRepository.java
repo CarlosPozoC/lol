@@ -57,15 +57,14 @@ public class Champion_tipsRepository {
         }
     }
 
-    public void updateChampion(int id, int champion, String champion_name, String title, String lore, String tags) {
+    public void updateChampion(int id, int idchampion) {
         Connection conn = manager.open();
         PreparedStatement statement = null;
         try{
-            statement = conn.prepareStatement("update champion set champion_name = ?, title = ?, lore = ?, tags = ? where id = ?");
-            statement.setString(1, champion_name);
-            statement.setString(2, title);
-            statement.setString(3, lore);
-            statement.setString(4, tags);
+            statement = conn.prepareStatement("update champion set champion = ? where id = ?");
+            statement.setInt(1, idchampion);
+            statement.setInt(2, id);
+            statement.executeUpdate();
         } catch (SQLException e){
             e.printStackTrace();
             throw new RuntimeException();

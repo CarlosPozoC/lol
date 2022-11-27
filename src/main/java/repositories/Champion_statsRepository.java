@@ -60,12 +60,12 @@ public class Champion_statsRepository {
         }
     }
 
-    public void updateChampion(int id, int champion) {
+    public void updateChampion(int id, int idchampion) {
         Connection conn = manager.open();
         PreparedStatement statement = null;
         try{
             statement = conn.prepareStatement("update champion set champion = ? where id = ?");
-            statement.setInt(1, champion);
+            statement.setInt(1, idchampion);
             statement.setInt(2, id);
             statement.executeUpdate();
         } catch (SQLException e){

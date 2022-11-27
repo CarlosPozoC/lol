@@ -45,6 +45,6 @@ public class ChampionInsertServlet extends BaseServlet {
         c.setTags("tags");
 		
 		repository.insertOne(c);
-		redirect(req, resp, "/Champions/ChampionList.jsp");
+		redirect(req, resp, "/Champions/ChampionInsert.jsp");
 	}
 }
