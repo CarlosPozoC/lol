@@ -1,8 +1,6 @@
 package repositories;
-import models.Champions;
 import connection.*;
 import models.Champion_stats;
-
 import java.util.*;
 import java.sql.*;
 
@@ -17,16 +15,15 @@ public class Champion_statsRepository {
         ResultSet rs = null;
 
         try{
-            statement = conn.prepareStatement("select * from alumno");
+            statement = conn.prepareStatement("select * from champion_stats");
             rs = statement.executeQuery();
 
-            ChampionsRepository championRepo = new ChampionsRepository();
 
             while (rs.next()) {
             	Champion_stats cs = new Champion_stats();
+            	cs.setChampion(rs.getInt("champion"));
                 cs.setStat_name(rs.getString("stat_name"));
                 cs.setStat_value(rs.getInt("stat_value"));
-                cs.setChampion(championRepo.findById(rs.getInt("champion")));
                 cs.setModifier_per_level(rs.getInt("modifier_per_level"));
                 Champion_statsList.add(cs);
             }
@@ -45,10 +42,10 @@ public class Champion_statsRepository {
         Connection conn = manager.open();
         PreparedStatement statement = null;
         try{
-            statement = conn.prepareStatement("INSERT INTO champion_stats(stat_name, stat_value, champion, modifier_per_level ) VALUES (?, ?, ?, ?)");
-            statement.setString(1, cs.getStat_name());
-            statement.setInt(2, cs.getStat_value());
-            statement.setInt(3, cs.getChampion().getId());
+            statement = conn.prepareStatement("INSERT INTO champion_stats(champion, stat_name, stat_value, modifier_per_level ) VALUES (?, ?, ?, ?)");
+            statement.setInt(1, cs.getChampion());
+            statement.setString(2, cs.getStat_name());
+            statement.setInt(3, cs.getStat_value());   
             statement.setInt(4, cs.getModifier_per_level());
             statement.executeUpdate();
         } catch (SQLException e){
@@ -60,24 +57,4 @@ public class Champion_statsRepository {
         }
     }
 
-    public void updateChampion(int id, int idchampion) {
-        Connection conn = manager.open();
-        PreparedStatement statement = null;
-        try{
-            statement = conn.prepareStatement("update champion set champion = ? where id = ?");
-            statement.setInt(1, idchampion);
-            statement.setInt(2, id);
-            statement.executeUpdate();
-        } catch (SQLException e){
-            e.printStackTrace();
-            throw new RuntimeException();
-        } finally {
-            manager.close(statement);
-            manager.close(conn);
-        }
-    }
-    public String calcChampionStr(int id){
-        ChampionsRepository championsRepository = new ChampionsRepository();
-        return championsRepository.findById(id).getChampion_name();
-    }
 }

@@ -2768,3 +2768,12 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: /home/carlos/ecl
 	at org.h2.mvstore.FileStore.open(FileStore.java:163)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:444)
 	... 56 more
+2022-11-27 19:12:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ALUMNO" not found; SQL statement:
+select * from alumno [42102-210]
+2022-11-27 19:13:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ALUMNO" not found; SQL statement:
+select * from alumno [42102-210]
+2022-11-27 19:13:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ALUMNO" not found; SQL statement:
+select * from alumno [42102-210]

@@ -1,5 +1,4 @@
 package repositories;
-import models.Champions;
 import connection.*;
 import models.Champion_tips;
 
@@ -17,15 +16,14 @@ public class Champion_tipsRepository {
         ResultSet rs = null;
 
         try{
-            statement = conn.prepareStatement("select * from alumno");
+            statement = conn.prepareStatement("select * from champion_tips");
             rs = statement.executeQuery();
 
-            ChampionsRepository championRepo = new ChampionsRepository();
 
             while (rs.next()) {
             	Champion_tips ct = new Champion_tips();
                 ct.setId(rs.getInt("id"));
-                ct.setChampion(championRepo.findById(rs.getInt("champion")));
+                ct.setChampion(rs.getInt("champion"));
                 ct.setTip(rs.getString("tip"));
                 Champion_tipsList.add(ct);
             }
@@ -45,7 +43,7 @@ public class Champion_tipsRepository {
         PreparedStatement statement = null;
         try{
             statement = conn.prepareStatement("INSERT INTO champion_stats(stat_name, stat_value, champion, modifier_per_level ) VALUES (?, ?, ?, ?)");
-            statement.setInt(1, ct.getChampion().getId());
+            statement.setInt(1, ct.getChampion());
             statement.setString(2, ct.getTip());
             statement.executeUpdate();
         } catch (SQLException e){
@@ -55,27 +53,5 @@ public class Champion_tipsRepository {
             manager.close(statement);
             manager.close(conn);
         }
-    }
-
-    public void updateChampion(int id, int idchampion) {
-        Connection conn = manager.open();
-        PreparedStatement statement = null;
-        try{
-            statement = conn.prepareStatement("update champion set champion = ? where id = ?");
-            statement.setInt(1, idchampion);
-            statement.setInt(2, id);
-            statement.executeUpdate();
-        } catch (SQLException e){
-            e.printStackTrace();
-            throw new RuntimeException();
-        } finally {
-            manager.close(statement);
-            manager.close(conn);
-        }
-    }
-    
-    public String calcChampionStr(int id){
-        ChampionsRepository championsRepository = new ChampionsRepository();
-        return championsRepository.findById(id).getChampion_name();
     }
 }

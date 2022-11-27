@@ -19,5 +19,11 @@
     <br/>
     	<a href="Champion_abilities/Champion_abilitiesList.jsp">Listado de habilidades</a>
     <br/>
+    <br/>
+    	<a href="Champion_stats/Champion_statsList.jsp">Listado de stats</a>
+    <br/>
+    <br/>
+    	<a href="Champion_tips/Champion_tipsList.jsp">Listado de tips</a>
+    <br/>
 </body>
 </html>

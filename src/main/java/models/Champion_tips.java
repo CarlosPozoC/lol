@@ -2,7 +2,7 @@ package models;
 
 public class Champion_tips {
 	private Integer id;
-	private Champions champion;
+	private Integer champion;
 	private String tip;
 	
 	public Integer getId() {
@@ -11,10 +11,10 @@ public class Champion_tips {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public models.Champions getChampion() {
+	public Integer getChampion() {
 		return champion;
 	}
-	public void setChampion(models.Champions champion) {
+	public void setChampion(Integer champion) {
 		this.champion = champion;
 	}
 	public String getTip() {

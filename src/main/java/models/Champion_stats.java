@@ -1,15 +1,15 @@
 package models;
 
 public class Champion_stats {
-	private Champions champion;
+	private Integer champion;
 	private String stat_name;
 	private Integer stat_value;
 	private Integer modifier_per_level;
 	
-	public models.Champions getChampion() {
+	public Integer getChampion() {
 		return champion;
 	}
-	public void setChampion(models.Champions champion) {
+	public void setChampion(Integer champion) {
 		this.champion = champion;
 	}
 	public String getStat_name() {

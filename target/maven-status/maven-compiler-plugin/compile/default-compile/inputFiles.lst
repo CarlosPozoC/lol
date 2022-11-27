@@ -9,12 +9,14 @@
 /home/carlos/eclipse-workspace/lol/src/main/java/servlet/champions/ChampionUpdateServlet.java
 /home/carlos/eclipse-workspace/lol/src/main/java/models/Champion_tips.java
 /home/carlos/eclipse-workspace/lol/src/main/java/connection/AbstractConnection.java
+/home/carlos/eclipse-workspace/lol/src/main/java/servlet/champion_stats/Champion_statsListServlet.java
 /home/carlos/eclipse-workspace/lol/src/main/java/repositories/ChampionsRepository.java
 /home/carlos/eclipse-workspace/lol/src/main/java/connection/H2Connection.java
 /home/carlos/eclipse-workspace/lol/src/main/java/models/Items.java
 /home/carlos/eclipse-workspace/lol/src/main/java/servlet/runes/RuneListServlet.java
 /home/carlos/eclipse-workspace/lol/src/main/java/repositories/Champion_abilitiesRepository.java
 /home/carlos/eclipse-workspace/lol/src/main/java/servlet/BaseServlet.java
+/home/carlos/eclipse-workspace/lol/src/main/java/servlet/champion_tips/Champion_tipsListServlet.java
 /home/carlos/eclipse-workspace/lol/src/main/java/servlet/champion_abilities/Champion_abilitiesListServlet.java
 /home/carlos/eclipse-workspace/lol/src/main/java/repositories/Champion_statsRepository.java
 /home/carlos/eclipse-workspace/lol/src/main/java/repositories/RunesRepository.java
