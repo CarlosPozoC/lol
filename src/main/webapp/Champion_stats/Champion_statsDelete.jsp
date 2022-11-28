@@ -6,18 +6,18 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Listado habilidades</title>
+	<title>Listado stats</title>
 </head>
 <body>
 <br/>
-<form action="/Champion_abilitiesDelete" method="post">
-	<span>Seguro que quiere borrar la habilidad, ${champion_name}</span>
-	<input type="hidden" id="id" name="id" value="${champion}">
+<form action="/Champion_statsDelete" method="post">
+	<span>Seguro que quiere borrar este stat, ${stat_name}</span>
+	<input type="hidden" id="champion" name="champion" value="${champion}">
 	<br />
 	<input type="submit">
 </form>
 <br/>
-<a href="Champion_abilities/Champion_abilitiesList.jsp">Listado de stats</a>
+<a href="Champion_stats/Champion_statsList.jsp">Listado de stats</a>
 <a href="../index.jsp">Menu principal</a>
 <br/>
 </body>

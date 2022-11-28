@@ -25,6 +25,13 @@
             <td>${cs.getStat_name()}</td>
             <td>${cs.getStat_value()}</td>
             <td>${cs.getModifier_per_level()}</td>
+            <td>
+                <form action="/Champion_statsDelete" method="get">
+                    <input type="hidden" name="champion" value="${cs.getChampion()}"/>
+                    <input type="hidden" name="stat_name" value="${cs.getStat_name()}"/>
+                    <input value="Borrar" type="submit"/>
+                </form>
+            </td>
         </tr>
     </c:forEach>
 </table>

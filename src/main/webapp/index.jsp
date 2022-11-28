@@ -22,6 +22,7 @@
     <br/>
     <br/>
     	<a href="Champion_stats/Champion_statsList.jsp">Listado de stats</a>
+    	<a href="Champion_stats/Champion_statsInsert.jsp">Insercion de stats</a>
     <br/>
     <br/>
     	<a href="Champion_tips/Champion_tipsList.jsp">Listado de tips</a>

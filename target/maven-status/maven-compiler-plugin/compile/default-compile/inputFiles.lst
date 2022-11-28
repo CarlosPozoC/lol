@@ -20,6 +20,8 @@
 /home/carlos/eclipse-workspace/lol/src/main/java/models/Champion_tips.java
 /home/carlos/eclipse-workspace/lol/src/main/java/servlet/champion_stats/Champion_statsListServlet.java
 /home/carlos/eclipse-workspace/lol/src/main/java/connection/H2Connection.java
+/home/carlos/eclipse-workspace/lol/src/main/java/servlet/champion_stats/Champion_statsInsertServlet.java
+/home/carlos/eclipse-workspace/lol/src/main/java/servlet/champion_stats/Champion_statsDeleteServlet.java
 /home/carlos/eclipse-workspace/lol/src/main/java/servlet/champion_tips/Champion_tipsListServlet.java
 /home/carlos/eclipse-workspace/lol/src/main/java/servlet/champion_abilities/Champion_abilitiesListServlet.java
 /home/carlos/eclipse-workspace/lol/src/main/java/repositories/Champion_statsRepository.java

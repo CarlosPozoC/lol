@@ -56,5 +56,21 @@ public class Champion_statsRepository {
             manager.close(conn);
         }
     }
+    
+    public void deleteById(int champion){
+        Connection conn = manager.open();
+        PreparedStatement statement = null;
+        try{
+            statement = conn.prepareStatement("delete from champion_stats where champion = ?");
+            statement.setInt(1, champion);
+            statement.executeUpdate();
+        } catch (SQLException e){
+            e.printStackTrace();
+            throw new RuntimeException();
+        } finally {
+            manager.close(statement);
+            manager.close(conn);
+        }
+    }
 
 }
