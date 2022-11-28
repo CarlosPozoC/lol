@@ -24,6 +24,13 @@
             <td>${ct.getId()}</td>
             <td>${ct.getChampion()}</td>
             <td>${ct.getTip()}</td>
+            <td>
+                <form action="/Champion_tipsDelete" method="get">
+                    <input type="hidden" name="id" value="${ct.getId()}"/>
+                    <input type="hidden" name="tip" value="${ct.getTip()}"/>
+                    <input value="Borrar" type="submit"/>
+                </form>
+            </td>
         </tr>
     </c:forEach>
 </table>

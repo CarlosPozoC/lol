@@ -42,9 +42,26 @@ public class Champion_tipsRepository {
         Connection conn = manager.open();
         PreparedStatement statement = null;
         try{
-            statement = conn.prepareStatement("INSERT INTO champion_stats(stat_name, stat_value, champion, modifier_per_level ) VALUES (?, ?, ?, ?)");
-            statement.setInt(1, ct.getChampion());
-            statement.setString(2, ct.getTip());
+            statement = conn.prepareStatement("INSERT INTO champion_tips(id, champion, tip) VALUES (?, ?, ?)");
+            statement.setInt(1, ct.getId());
+            statement.setInt(2, ct.getChampion());
+            statement.setString(3, ct.getTip());
+            statement.executeUpdate();
+        } catch (SQLException e){
+            e.printStackTrace();
+            throw new RuntimeException();
+        } finally {
+            manager.close(statement);
+            manager.close(conn);
+        }
+    }
+    
+    public void deleteById(int id){
+        Connection conn = manager.open();
+        PreparedStatement statement = null;
+        try{
+            statement = conn.prepareStatement("delete from champion_tips where id = ?");
+            statement.setInt(1, id);
             statement.executeUpdate();
         } catch (SQLException e){
             e.printStackTrace();

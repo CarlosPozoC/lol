@@ -26,6 +26,7 @@
     <br/>
     <br/>
     	<a href="Champion_tips/Champion_tipsList.jsp">Listado de tips</a>
+    	<a href="Champion_tips/Champion_tipsInsert.jsp">Insertar tip</a>
     <br/>
 </body>
 </html>
