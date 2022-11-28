@@ -1,4 +1,4 @@
-package servlet.champions;
+package servlet.items;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -14,12 +14,12 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import models.Champions;
-import repositories.ChampionsRepository;
+import models.Items;
+import repositories.ItemsRepository;
 import servlet.BaseServlet;
 
-@WebServlet(name="ChampionUpdateServlet", value="/ChampionUpdate")
-public class ChampionUpdateServlet extends BaseServlet {
+@WebServlet(name="ItemsDeleteServlet", value="/ItemDelete")
+public class ItemDeleteServlet extends BaseServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -27,31 +27,21 @@ public class ChampionUpdateServlet extends BaseServlet {
 	}
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
-		doYourOtherThing(req, resp);
+		doYourOtherThing(req,resp);
 	}
 
 	private void doYourThing(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
-		ChampionsRepository repository = new ChampionsRepository();
+		ItemsRepository repository = new ItemsRepository();
 		Integer id = Integer.parseInt(req.getParameter("id"));
-		String champion_name = req.getParameter("champion_name");
-		String title = req.getParameter("title");
-		String lore = req.getParameter("lore");
-		String tags = req.getParameter("tags");
-		repository.updateChampion(id, champion_name,title,lore,tags);
-		redirect(req, resp, "/Champions/ChampionUpdate.jsp");
+		repository.deleteById(id);
+		redirect(req, resp, "/Items/ItemList.jsp");
 	}
 
 	private void doYourOtherThing(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 		Integer id = Integer.parseInt(req.getParameter("id"));
-		String champion_name = req.getParameter("champion_name");
-		String title = req.getParameter("title");
-		String lore = req.getParameter("lore");
-		String tags = req.getParameter("tags");
+		String item_name = req.getParameter("item_name");
 		req.setAttribute("id", id);
-		req.setAttribute("champion_name", champion_name);
-		req.setAttribute("title", title);
-		req.setAttribute("lore", lore);
-		req.setAttribute("tags", tags);
-		redirect(req, resp, "/Champions/ChampionUpdate.jsp");
+		req.setAttribute("item_name", item_name);
+		redirect(req, resp, "/Items/ItemDelete.jsp");
 	}
 }

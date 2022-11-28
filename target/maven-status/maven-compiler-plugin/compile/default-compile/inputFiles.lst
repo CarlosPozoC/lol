@@ -4,6 +4,7 @@
 /home/carlos/eclipse-workspace/lol/src/main/java/servlet/champion_abilities/Champion_abilitiesInsertServlet.java
 /home/carlos/eclipse-workspace/lol/src/main/java/servlet/champion_abilities/Champion_abilitiesDeleteServlet.java
 /home/carlos/eclipse-workspace/lol/src/main/java/servlet/items/ItemListServlet.java
+/home/carlos/eclipse-workspace/lol/src/main/java/servlet/items/ItemInsertServlet.java
 /home/carlos/eclipse-workspace/lol/src/main/java/repositories/ItemsRepository.java
 /home/carlos/eclipse-workspace/lol/src/main/java/servlet/champion_tips/Champion_tipsInsertServlet.java
 /home/carlos/eclipse-workspace/lol/src/main/java/connection/AbstractConnection.java
@@ -25,6 +26,7 @@
 /home/carlos/eclipse-workspace/lol/src/main/java/servlet/champion_tips/Champion_tipsDeleteServlet.java
 /home/carlos/eclipse-workspace/lol/src/main/java/servlet/champion_stats/Champion_statsDeleteServlet.java
 /home/carlos/eclipse-workspace/lol/src/main/java/servlet/champion_tips/Champion_tipsListServlet.java
+/home/carlos/eclipse-workspace/lol/src/main/java/servlet/items/ItemDeleteServlet.java
 /home/carlos/eclipse-workspace/lol/src/main/java/servlet/champion_abilities/Champion_abilitiesListServlet.java
 /home/carlos/eclipse-workspace/lol/src/main/java/repositories/Champion_statsRepository.java
 /home/carlos/eclipse-workspace/lol/src/main/java/repositories/RunesRepository.java

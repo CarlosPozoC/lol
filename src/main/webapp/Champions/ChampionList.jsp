@@ -27,6 +27,16 @@
             <td>${c.getLore()}</td>
             <td>${c.getTags()}</td>
             <td>
+            	<form action="/ChampionUpdate" method="get">
+                <input type="hidden" name="id" value="${c.getId()}"/>
+                <input type="hidden" name="champion_name" value="${c.getChampion_name()}"/>
+                <input type="hidden" name="title" value="${c.getTitle()}"/>
+                <input type="hidden" name="lore" value="${c.getLore()}"/>
+                <input type="hidden" name="tags" value="${c.getTags()}"/>
+                <input value="Editar" type="submit"/>
+           	    </form>
+            </td>
+            <td>
                 <form action="/ChampionDelete" method="get">
                     <input type="hidden" name="id" value="${c.getId()}"/>
                     <input type="hidden" name="champion_name" value="${c.getChampion_name()}"/>

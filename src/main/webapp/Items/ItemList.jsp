@@ -24,6 +24,13 @@
             <td>${i.getId()}</td>
             <td>${i.getItem_name()}</td>
             <td>${i.getEffect()}</td>
+            <td>
+                <form action="/ItemDelete" method="get">
+                    <input type="hidden" name="id" value="${i.getId()}"/>
+                    <input type="hidden" name="item_name" value="${i.getItem_name()}"/>
+                    <input value="Borrar" type="submit"/>
+                </form>
+            </td>
         </tr>
     </c:forEach>
 </table>

@@ -10,8 +10,11 @@
 <br/>
 <form action="/ChampionUpdate" method="post">
 	<span>Champion:</span>
-	<input type="hidden" id="id" name="id" value="${id}">
-	<input type="number" id="champion" name="champion" value="${champion}">
+	<input type="number" id="id" name="id" value="${id}">
+	<input type="text" id="champion_name" name="champion_name" value="${champion_name}">
+	<input type="text" id="title" name="title" value="${title}">
+	<input type="text" id="lore" name="lore" value="${lore}">
+	<input type="text" id="tags" name="tags" value="${tags}">
 	<br />
 	<input type="submit">
 </form>

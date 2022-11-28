@@ -101,4 +101,24 @@ public class ChampionsRepository {
             manager.close(conn);
         }
     }
+    
+    public void updateChampion(int id, String champion_name, String title, String lore, String tags) {
+        Connection conn = manager.open();
+        PreparedStatement statement = null;
+        try{
+            statement = conn.prepareStatement("update champions set champion_name = ?,title=?,lore=?,tags=? where id = ?");
+            statement.setString(1, champion_name);
+            statement.setString(2, title);
+            statement.setString(3, lore);
+            statement.setString(4, tags);
+            statement.setInt(5, id);
+            statement.executeUpdate();
+        } catch (SQLException e){
+            e.printStackTrace();
+            throw new RuntimeException();
+        } finally {
+            manager.close(statement);
+            manager.close(conn);
+        }
+    }
 }

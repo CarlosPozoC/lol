@@ -12,6 +12,7 @@
     <br/>
     <br/>
     	<a href="Items/ItemList.jsp">Listado de Items</a>
+    	<a href="Items/ItemInsert.jsp">Insercion de Items</a>
     <br/>
     <br/>
     	<a href="Runes/RuneList.jsp">Listado de Runas</a>
