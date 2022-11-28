@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1>Listado campeones</h1>
-<form action="/ChampionListServlet" method="post">
+<form action="/ChampionList" method="post">
     <br/>
     <a href="../index.jsp">Menu principal</a>
     <br/>

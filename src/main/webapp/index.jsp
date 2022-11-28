@@ -7,7 +7,7 @@
 </head>
 <body>
     <br/>
-		<a href="/ChampionList">Listado campeones</a>
+		<a href="/Champions/ChampionList.jsp">Listado campeones</a>
 		<a href="Champions/ChampionInsert.jsp">Insercion de campeon</a>
     <br/>
     <br/>
