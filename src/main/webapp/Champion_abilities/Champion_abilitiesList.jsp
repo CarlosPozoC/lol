@@ -28,6 +28,13 @@
             <td>${ca.getEffect()}</td>
             <td>${ca.getCost()}</td>
             <td>${ca.getRango()}</td>
+            <td>
+	            <form action="/Champion_abilitiesDelete" method="get">
+	                    <input type="hidden" name="id" value="${ca.getId()}"/>
+	                    <input type="hidden" name="champion_name" value="${ca.getChampion_name()}"/>
+	                    <input value="Borrar" type="submit"/>
+	            </form>
+	        </td>
         </tr>
     </c:forEach>
 </table>

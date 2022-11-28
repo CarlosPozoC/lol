@@ -30,7 +30,7 @@
                 <form action="/ChampionDelete" method="get">
                     <input type="hidden" name="id" value="${c.getId()}"/>
                     <input type="hidden" name="champion_name" value="${c.getChampion_name()}"/>
-                    <input type="submit"/>
+                    <input value="Borrar" type="submit"/>
                 </form>
             </td>
         </tr>

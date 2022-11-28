@@ -9,7 +9,6 @@
     <br/>
 		<a href="/ChampionList">Listado campeones</a>
 		<a href="Champions/ChampionInsert.jsp">Insercion de campeon</a>
-		<a href="Champions/ChampionDelete.jsp">Borrado de campeon</a>
     <br/>
     <br/>
     	<a href="Items/ItemList.jsp">Listado de Items</a>
@@ -19,6 +18,7 @@
     <br/>
     <br/>
     	<a href="Champion_abilities/Champion_abilitiesList.jsp">Listado de habilidades</a>
+    	<a href="Champion_abilities/Champion_abilitiesInsert.jsp">Añadir habilidad</a>
     <br/>
     <br/>
     	<a href="Champion_stats/Champion_statsList.jsp">Listado de stats</a>

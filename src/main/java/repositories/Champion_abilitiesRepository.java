@@ -44,13 +44,31 @@ public class Champion_abilitiesRepository {
         Connection conn = manager.open();
         PreparedStatement statement = null;
         try{
-            statement = conn.prepareStatement("INSERT INTO champion_abilities(champion_name, champion_description, champion, effect, cost, rango) VALUES (?, ?, ?, ?, ?)");
-            statement.setInt(1, ca.getChampion());
-            statement.setString(2, ca.getChampion_name());
-            statement.setString(3, ca.getChampion_description());
-            statement.setString(4, ca.getEffect());
-            statement.setString(5, ca.getCost());
-            statement.setInt(6, ca.getRango());
+            statement = conn.prepareStatement("INSERT INTO champion_abilities(id, champion, champion_name, champion_description, effect, cost, rango) VALUES (?, ?, ?, ?, ?, ?, ?)");
+            statement.setInt(1, ca.getId());
+            statement.setInt(2, ca.getChampion());
+            statement.setString(3, ca.getChampion_name());
+            statement.setString(4, ca.getChampion_description());
+            statement.setString(5, ca.getEffect());
+            statement.setString(6, ca.getCost());
+            statement.setInt(7, ca.getRango());
+            statement.executeUpdate();
+        } catch (SQLException e){
+            e.printStackTrace();
+            throw new RuntimeException();
+        } finally {
+            manager.close(statement);
+            manager.close(conn);
+        }
+    }
+    
+    
+    public void deleteById(int id){
+        Connection conn = manager.open();
+        PreparedStatement statement = null;
+        try{
+            statement = conn.prepareStatement("delete from champion_abilities where id = ?");
+            statement.setInt(1, id);
             statement.executeUpdate();
         } catch (SQLException e){
             e.printStackTrace();
