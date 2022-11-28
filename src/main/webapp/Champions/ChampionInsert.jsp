@@ -9,6 +9,7 @@
 <body>
 <br/>
 <form action="/ChampionInsert" method="post">
+	<span>Id:</span> <input type="number" id="id" name="id"> <br />
 	<span>Champion_name:</span> <input type="text" id="champion_name" name="champion_name"> <br />
 	<span>Title:</span> <input type="text" id="title" name="title"> <br />
 	<span>Lore:</span> <input type="text" id="lore" name="lore"> <br />
@@ -16,7 +17,7 @@
 	<input type="submit">
 </form>
 <br/>
-<a href="ChampionList.jsp">Listado de campeones</a>
+<a href="Champions/ChampionList.jsp">Listado de campeones</a>
 <a href="../index.jsp">Menu principal</a>
 <br/>
 </body>

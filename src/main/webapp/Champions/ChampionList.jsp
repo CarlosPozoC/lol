@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1>Listado campeones</h1>
-<form action="/ChampionList" method="post">
+<form action="/ChampionListServlet" method="post">
     <br/>
     <a href="../index.jsp">Menu principal</a>
     <br/>
@@ -26,6 +26,13 @@
             <td>${c.getTitle()}</td>
             <td>${c.getLore()}</td>
             <td>${c.getTags()}</td>
+            <td>
+                <form action="/ChampionDelete" method="get">
+                    <input type="hidden" name="id" value="${c.getId()}"/>
+                    <input type="hidden" name="champion_name" value="${c.getChampion_name()}"/>
+                    <input type="submit"/>
+                </form>
+            </td>
         </tr>
     </c:forEach>
 </table>

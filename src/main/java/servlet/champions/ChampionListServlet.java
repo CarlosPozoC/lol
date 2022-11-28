@@ -20,7 +20,10 @@ public class ChampionListServlet extends BaseServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
-		//doNothing()
+		ChampionsRepository repository = new ChampionsRepository();
+		List<Champions> championList = repository.findAll();
+		req.setAttribute("Champions", championList);
+		redirect(req, resp, "/Champions/ChampionList.jsp");
 	}
 
 	private void doYourThing(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{

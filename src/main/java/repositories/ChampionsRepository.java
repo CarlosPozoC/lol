@@ -1,5 +1,6 @@
 package repositories;
 import models.Champions;
+
 import connection.*;
 import java.util.*;
 import java.sql.*;
@@ -42,7 +43,8 @@ public class ChampionsRepository {
         Connection conn = manager.open();
         PreparedStatement statement = null;
         try{
-            statement = conn.prepareStatement("INSERT INTO champions(champion_name, title, lore, tags) VALUES (?, ?, ?, ?)");
+            statement = conn.prepareStatement("INSERT INTO champions(id, champion_name, title, lore, tags) VALUES (?, ?, ?, ?, ?)");
+            statement.setInt(1, c.getId());
             statement.setString(2, c.getChampion_name());
             statement.setString(3, c.getTitle());
             statement.setString(4, c.getLore());
@@ -82,5 +84,21 @@ public class ChampionsRepository {
             manager.close(conn);
         }
         return  c;
+    }
+    
+    public void deleteById(int id){
+        Connection conn = manager.open();
+        PreparedStatement statement = null;
+        try{
+            statement = conn.prepareStatement("delete from champions where id = ?");
+            statement.setInt(1, id);
+            statement.executeUpdate();
+        } catch (SQLException e){
+            e.printStackTrace();
+            throw new RuntimeException();
+        } finally {
+            manager.close(statement);
+            manager.close(conn);
+        }
     }
 }

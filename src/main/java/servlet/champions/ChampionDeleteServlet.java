@@ -7,7 +7,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -19,33 +18,30 @@ import models.Champions;
 import repositories.ChampionsRepository;
 import servlet.BaseServlet;
 
-@WebServlet(name="championInsertServlet", value="/ChampionInsert")
-public class ChampionInsertServlet extends BaseServlet {
+@WebServlet(name="ChampionDeleteServlet", value="/ChampionDelete")
+public class ChampionDeleteServlet extends BaseServlet {
+
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doYourThing(req, resp);
 	}
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
-		//doNothing()
+		doYourOtherThing(req,resp);
 	}
 
 	private void doYourThing(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 		ChampionsRepository repository = new ChampionsRepository();
-		Integer id=Integer.parseInt(req.getParameter("id"));
-		String champion_name = req.getParameter("champion_name");
-		String title = req.getParameter("title");
-		String lore= req.getParameter("lore");
-		String tags = req.getParameter("tags");
+		Integer id = Integer.parseInt(req.getParameter("id"));
+		repository.deleteById(id);
+		redirect(req, resp, "/Champions/ChampionList.jsp");
+	}
 
-		Champions c = new Champions();
-		c.setId(id);
-		c.setChampion_name(champion_name);
-        c.setTitle(title);
-        c.setLore(lore);
-        c.setTags(tags);
-		
-		repository.insertOne(c);
-		redirect(req, resp, "/Champions/ChampionInsert.jsp");
+	private void doYourOtherThing(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+		Integer id = Integer.parseInt(req.getParameter("id"));
+		String champion_name = req.getParameter("champion_name");
+		req.setAttribute("id", id);
+		req.setAttribute("champion_name", champion_name);
+		redirect(req, resp, "/Champions/ChampionDelete.jsp");
 	}
 }

@@ -7,8 +7,9 @@
 </head>
 <body>
     <br/>
-		<a href="Champions/ChampionList.jsp">Listado campeones</a>
+		<a href="/ChampionList">Listado campeones</a>
 		<a href="Champions/ChampionInsert.jsp">Insercion de campeon</a>
+		<a href="Champions/ChampionDelete.jsp">Borrado de campeon</a>
     <br/>
     <br/>
     	<a href="Items/ItemList.jsp">Listado de Items</a>
