@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1>Listado habilidades por rango</h1>
-<form action="/Champion_abilitiesSearch" method="post">
+<form action="/Champion_abilitiesSearch" method="get">
     <br/>
     <a href="../index.jsp">Menu principal</a>
     <br/>

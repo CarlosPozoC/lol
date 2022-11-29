@@ -14,7 +14,7 @@
 	<input type="submit">
 </form>
 <br/>
-<a href="Champion_abilities/Champion_abilitiesList.jsp">Listado de campeones</a>
+<a href="Champion_abilities/Champion_abilitiesSearchList.jsp">Listado de habilidades por rango (enviar informacion antes de entrar)</a>
 <a href="../index.jsp">Menu principal</a>
 <br/>
 </body>

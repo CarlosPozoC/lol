@@ -40,6 +40,6 @@ public class Champion_abilitiesSearchServlet extends BaseServlet {
 		Integer rango_2 =Integer.parseInt(req.getParameter("rango_2"));
 		req.setAttribute("rango_1", rango_1);
 		req.setAttribute("rango_2", rango_2);
-		redirect(req, resp, "/Champion_abilities/Champion_abilitiesSearch.jsp");
+		redirect(req, resp, "/Champion_abilities/Champion_abilitiesSearchList.jsp");
 	}
 }
