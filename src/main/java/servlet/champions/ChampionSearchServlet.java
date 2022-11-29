@@ -49,6 +49,6 @@ public class ChampionSearchServlet extends BaseServlet {
 		List<Champion_tips> champion_tips= repository_2.findByIds(champion_ids);
 		req.setAttribute("champions", champions);
 		req.setAttribute("champion_tips", champion_tips);
-		redirect(req, resp, "/Champion_abilities/ChampionSearchList.jsp");
+		redirect(req, resp, "/Champions/ChampionSearchList.jsp");
 	}
 }
