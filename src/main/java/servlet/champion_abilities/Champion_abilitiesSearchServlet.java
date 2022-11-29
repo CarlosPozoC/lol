@@ -32,6 +32,7 @@ public class Champion_abilitiesSearchServlet extends BaseServlet {
 		Integer rango_2 =Integer.parseInt(req.getParameter("rango_2"));
 		List<Champion_abilities> champion_abilitiesSearchList = repository.findByRango(rango_1,rango_2);
 		req.setAttribute("Champion_abilitiesSearchList", champion_abilitiesSearchList);
+		redirect(req, resp, "/Champion_abilities/Champion_abilitiesSearchList.jsp");
 	}
 
 	private void doYourThing(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
