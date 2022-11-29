@@ -27,15 +27,18 @@ public class Champion_abilitiesSearchServlet extends BaseServlet {
 	}
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
-		//doNothing()
-	}
-
-	private void doYourThing(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 		Champion_abilitiesRepository repository = new Champion_abilitiesRepository();
 		Integer rango_1 =Integer.parseInt(req.getParameter("rango_1"));
 		Integer rango_2 =Integer.parseInt(req.getParameter("rango_2"));
 		List<Champion_abilities> champion_abilitiesSearchList = repository.findByRango(rango_1,rango_2);
-		req.setAttribute("Champion_abilities", champion_abilitiesSearchList);
-		redirect(req, resp, "/Champion_abilities/Champion_abilitiesSearchList.jsp");
+		req.setAttribute("Champion_abilitiesSearchList", champion_abilitiesSearchList);
+	}
+
+	private void doYourThing(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+		Integer rango_1 =Integer.parseInt(req.getParameter("rango_1"));
+		Integer rango_2 =Integer.parseInt(req.getParameter("rango_2"));
+		req.setAttribute("rango_1", rango_1);
+		req.setAttribute("rango_2", rango_2);
+		redirect(req, resp, "/Champion_abilities/Champion_abilitiesSearch.jsp");
 	}
 }

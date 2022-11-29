@@ -19,7 +19,7 @@
 
 <table>
     <tr><td>Id</td><td>Champion</td><td>Champion_name</td><td>Champion_description</td><td>Effect</td><td>Cost</td><td>Rango</td></tr>
-    <c:forEach items="${Champion_abilities}" var="ca">
+    <c:forEach items="${Champion_abilitiesSearchList}" var="ca">
         <tr>
             <td>${ca.getId()}</td>
             <td>${ca.getChampion()}</td>
