@@ -44,16 +44,13 @@ public class Champion_statsRepository {
         ResultSet rs = null;
 
         try{
-            statement = conn.prepareStatement("select champion from champion_stats where stat_name= ? and stat_value ? ?");
+            statement = conn.prepareStatement("select * from champion_stats where stat_name = ? and stat_value "+condition+" ?");
             statement.setString(1, stat_name);
-            statement.setString(2, condition);
-            statement.setInt(3, stat_value);
+            statement.setInt(2, stat_value);
             rs = statement.executeQuery();
 
             while (rs.next()) {
-            	Champion_stats cs = new Champion_stats();
-                cs.setChampion(rs.getInt("champion"));
-                champion_ids.add(cs.getChampion());
+                champion_ids.add(rs.getInt("champion"));
             }
         } catch (SQLException e){
             e.printStackTrace();

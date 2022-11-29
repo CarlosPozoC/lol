@@ -3314,3 +3314,12 @@ select champion from champion_stats where stat_name= ? and stat_value ? ? [42000
 2022-11-29 10:34:46 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "select champion from champion_stats where stat_name= ? and stat_value [*]? ?"; SQL statement:
 select champion from champion_stats where stat_name= ? and stat_value ? ? [42000-210]
+2022-11-29 10:37:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "select cs.champion from champion_stats cs where cs.stat_name= ? and cs.stat_value [*]? ?"; SQL statement:
+select cs.champion from champion_stats cs where cs.stat_name= ? and cs.stat_value ? ? [42000-210]
+2022-11-29 10:39:45 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "select * from champion_stats where stat_name= ? and stat_value [*]? ?"; SQL statement:
+select * from champion_stats where stat_name= ? and stat_value ? ? [42000-210]
+2022-11-29 10:47:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "select * from champion_stats where stat_name = ? and stat_value [*]?, ?"; SQL statement:
+select * from champion_stats where stat_name = ? and stat_value ?, ? [42000-210]
