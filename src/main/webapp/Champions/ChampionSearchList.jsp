@@ -19,8 +19,8 @@
 
 <table>
     <tr><td>Id</td><td>Champion_name</td><td>Title</td><td>Lore</td><td>Tags</td><td>Id</td><td>Champion</td><td>Tip</td></tr>
-    <c:forEach items="${Champions}" var="c">
-    	<c:forEach items="${Champion_tips}" var="ct">
+    <c:forEach items="${champions}" var="c">
+    	<c:forEach items="${champion_tips}" var="ct">
 	        <tr>
 	             <td>${c.getId()}</td>
             	 <td>${c.getChampion_name()}</td>

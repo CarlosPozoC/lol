@@ -45,6 +45,10 @@ public class ChampionSearchServlet extends BaseServlet {
 		req.setAttribute("condition", condition);
 		req.setAttribute("stat_value", stat_value);
 		List<Integer> champion_ids= repository_3.findByStat(stat_name,condition,stat_value);
+		List<Champions> champions= repository_1.findByIds(champion_ids);
+		List<Champion_tips> champion_tips= repository_2.findByIds(champion_ids);
+		req.setAttribute("champions", champions);
+		req.setAttribute("champion_tips", champion_tips);
 		redirect(req, resp, "/Champion_abilities/ChampionSearchList.jsp");
 	}
 }

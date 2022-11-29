@@ -85,6 +85,38 @@ public class ChampionsRepository {
         }
         return  c;
     }
+    public List<Champions> findByIds(List<Integer> champion_ids) {
+        Connection conn = manager.open();
+        PreparedStatement statement = null;
+        List<Champions> champions = new ArrayList<>();
+        ResultSet rs = null;
+
+        try{
+        	for(int i=0;i<champion_ids.size();i++) {
+        		statement = conn.prepareStatement("select * from champions where id=?");
+                statement.setInt(1, champion_ids.get(i));
+                rs = statement.executeQuery();
+
+                while (rs.next()) {
+                    Champions c = new Champions();
+                    c.setId(rs.getInt("id"));
+                    c.setChampion_name(rs.getString("champion_name"));
+                    c.setTitle(rs.getString("title"));
+                    c.setLore(rs.getString("lore"));
+                    c.setTags(rs.getString("tags"));
+                    champions.add(c);
+                }
+        	}
+        } catch (SQLException e){
+            e.printStackTrace();
+            throw new RuntimeException();
+        } finally {
+            manager.close(rs);
+            manager.close(statement);
+            manager.close(conn);
+        }
+        return champions;
+    }
     
     public void deleteById(int id){
         Connection conn = manager.open();

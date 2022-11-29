@@ -37,6 +37,36 @@ public class Champion_tipsRepository {
         }
         return  Champion_tipsList;
     }
+    public List<Champion_tips> findByIds(List<Integer> champion_ids) {
+        Connection conn = manager.open();
+        PreparedStatement statement = null;
+        List<Champion_tips> champion_tips = new ArrayList<>();
+        ResultSet rs = null;
+
+        try{
+        	for(int i=0;i<champion_ids.size();i++) {
+        		statement = conn.prepareStatement("select * from champion_tips where champion=?");
+                statement.setInt(1, champion_ids.get(i));
+                rs = statement.executeQuery();
+
+                while (rs.next()) {
+                    Champion_tips c = new Champion_tips();
+                    c.setId(rs.getInt("id"));
+                    c.setChampion(rs.getInt("champion"));
+                    c.setTip(rs.getString("tip"));
+                    champion_tips.add(c);
+                }
+        	}
+        } catch (SQLException e){
+            e.printStackTrace();
+            throw new RuntimeException();
+        } finally {
+            manager.close(rs);
+            manager.close(statement);
+            manager.close(conn);
+        }
+        return champion_tips;
+    }
 
     public void insertOne(Champion_tips ct) {
         Connection conn = manager.open();

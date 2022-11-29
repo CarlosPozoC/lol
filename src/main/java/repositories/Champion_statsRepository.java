@@ -1,6 +1,5 @@
 package repositories;
 import connection.*;
-import models.Champion_abilities;
 import models.Champion_stats;
 import java.util.*;
 import java.sql.*;
@@ -41,7 +40,7 @@ public class Champion_statsRepository {
     public List<Integer> findByStat(String stat_name,String condition,Integer stat_value){
     	Connection conn = manager.open();
         PreparedStatement statement = null;
-        List<Integer> champions_ids = new ArrayList<>();
+        List<Integer> champion_ids = new ArrayList<>();
         ResultSet rs = null;
 
         try{
@@ -54,7 +53,7 @@ public class Champion_statsRepository {
             while (rs.next()) {
             	Champion_stats cs = new Champion_stats();
                 cs.setChampion(rs.getInt("champion"));
-                champions_ids.add(cs.getChampion());
+                champion_ids.add(cs.getChampion());
             }
         } catch (SQLException e){
             e.printStackTrace();
@@ -64,7 +63,7 @@ public class Champion_statsRepository {
             manager.close(statement);
             manager.close(conn);
         }
-        return  champions_ids;
+        return  champion_ids;
     }
     public void insertOne(Champion_stats cs) {
         Connection conn = manager.open();
