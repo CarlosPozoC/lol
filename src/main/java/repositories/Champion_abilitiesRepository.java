@@ -40,6 +40,39 @@ public class Champion_abilitiesRepository {
         return  Champion_abilitiesList;
     }
 
+    public List<Champion_abilities> findByRango(Integer rango_1,Integer rango_2) {
+        Connection conn = manager.open();
+        PreparedStatement statement = null;
+        List<Champion_abilities> Champion_abilitiesSearchList = new ArrayList<>();
+        ResultSet rs = null;
+
+        try{
+            statement = conn.prepareStatement("select * from champion_abilities where rango between ? and ?");
+            statement.setInt(1, rango_1);
+            statement.setInt(2, rango_2);
+            rs = statement.executeQuery();
+
+            while (rs.next()) {
+            	Champion_abilities ca = new Champion_abilities();
+                ca.setId(rs.getInt("id"));
+                ca.setChampion(rs.getInt("champion"));
+                ca.setChampion_name(rs.getString("champion_name"));
+                ca.setChampion_description(rs.getString("champion_description"));
+                ca.setEffect(rs.getString("effect"));
+                ca.setCost(rs.getString("cost"));
+                ca.setRango(rs.getInt("rango"));
+                Champion_abilitiesSearchList.add(ca);
+            }
+        } catch (SQLException e){
+            e.printStackTrace();
+            throw new RuntimeException();
+        } finally {
+            manager.close(rs);
+            manager.close(statement);
+            manager.close(conn);
+        }
+        return  Champion_abilitiesSearchList;
+    }
     public void insertOne(Champion_abilities ca) {
         Connection conn = manager.open();
         PreparedStatement statement = null;

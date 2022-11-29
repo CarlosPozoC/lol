@@ -20,6 +20,7 @@
     <br/>
     	<a href="Champion_abilities/Champion_abilitiesList.jsp">Listado de habilidades</a>
     	<a href="Champion_abilities/Champion_abilitiesInsert.jsp">Añadir habilidad</a>
+    	<a href="Champion_abilities/Champion_abilitiesSearch.jsp">Buscar habilidad por rango</a>
     <br/>
     <br/>
     	<a href="Champion_stats/Champion_statsList.jsp">Listado de stats</a>

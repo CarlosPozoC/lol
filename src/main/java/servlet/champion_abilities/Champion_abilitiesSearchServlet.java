@@ -34,8 +34,8 @@ public class Champion_abilitiesSearchServlet extends BaseServlet {
 		Champion_abilitiesRepository repository = new Champion_abilitiesRepository();
 		Integer rango_1 =Integer.parseInt(req.getParameter("rango_1"));
 		Integer rango_2 =Integer.parseInt(req.getParameter("rango_2"));
-		List<Champion_abilities> champion_abilitiesList = repository.findByRango(rango_1,rango_2);
-		req.setAttribute("Champion_abilities", champion_abilitiesList);
+		List<Champion_abilities> champion_abilitiesSearchList = repository.findByRango(rango_1,rango_2);
+		req.setAttribute("Champion_abilities", champion_abilitiesSearchList);
 		redirect(req, resp, "/Champion_abilities/Champion_abilitiesSearchList.jsp");
 	}
 }
