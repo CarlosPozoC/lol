@@ -1,5 +1,6 @@
 package repositories;
 import connection.*;
+import models.Champion_abilities;
 import models.Champion_stats;
 import java.util.*;
 import java.sql.*;
@@ -37,7 +38,34 @@ public class Champion_statsRepository {
         }
         return  Champion_statsList;
     }
+    public List<Integer> findByStat(String stat_name,String condition,Integer stat_value){
+    	Connection conn = manager.open();
+        PreparedStatement statement = null;
+        List<Integer> champions_ids = new ArrayList<>();
+        ResultSet rs = null;
 
+        try{
+            statement = conn.prepareStatement("select * from champion_stats.champion where stat_name=? and stat_value??");
+            statement.setString(1, stat_name);
+            statement.setString(2, condition);
+            statement.setInt(3, stat_value);
+            rs = statement.executeQuery();
+
+            while (rs.next()) {
+            	Champion_stats cs = new Champion_stats();
+                cs.setChampion(rs.getInt("champion"));
+                champions_ids.add(cs.getChampion());
+            }
+        } catch (SQLException e){
+            e.printStackTrace();
+            throw new RuntimeException();
+        } finally {
+            manager.close(rs);
+            manager.close(statement);
+            manager.close(conn);
+        }
+        return  champions_ids;
+    }
     public void insertOne(Champion_stats cs) {
         Connection conn = manager.open();
         PreparedStatement statement = null;

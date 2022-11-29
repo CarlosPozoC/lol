@@ -8,7 +8,7 @@
 </head>
 <body>
 <br/>
-<form action="/Champion_abilitiesSearch" method="post">
+<form action="/ChampionSearch" method="post">
 	<span>stat_name:</span> <input type="text" id="stat_name" name="stat_name"> <br />
 	<span>condition:</span> <input type="text" id="condition" name="condition"> <br />
 	<span>stat_value:</span> <input type="text" id="stat_value" name="stat_value"> <br />

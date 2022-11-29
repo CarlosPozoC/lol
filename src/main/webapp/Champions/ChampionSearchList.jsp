@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1>Listado campeones y sus tips mediante la busqueda de stat</h1>
-<form action="/Champion_abilitiesSearch" method="post">
+<form action="/ChampionSearch" method="post">
     <br/>
     <a href="../index.jsp">Menu principal</a>
     <br/>
@@ -18,11 +18,20 @@
 </form>
 
 <table>
-    <tr><td>Id</td><td>Champion</td><td>Champion_name</td><td>Champion_description</td><td>Effect</td><td>Cost</td><td>Rango</td></tr>
+    <tr><td>Id</td><td>Champion_name</td><td>Title</td><td>Lore</td><td>Tags</td><td>Id</td><td>Champion</td><td>Tip</td></tr>
     <c:forEach items="${Champions}" var="c">
-        <tr>
-            
-        </tr>
+    	<c:forEach items="${Champion_tips}" var="ct">
+	        <tr>
+	             <td>${c.getId()}</td>
+            	 <td>${c.getChampion_name()}</td>
+            	 <td>${c.getTitle()}</td>
+            	 <td>${c.getLore()}</td>
+           		 <td>${c.getTags()}</td>
+           		 <td>${ct.getId()}</td>
+          	     <td>${ct.getChampion()}</td>
+                 <td>${ct.getTip()}</td>
+	        </tr>
+	    </c:forEach>>
     </c:forEach>
 </table>
 </body>
