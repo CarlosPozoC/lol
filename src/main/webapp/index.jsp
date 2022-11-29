@@ -9,6 +9,7 @@
     <br/>
 		<a href="/Champions/ChampionList.jsp">Listado campeones</a>
 		<a href="Champions/ChampionInsert.jsp">Insercion de campeon</a>
+		<a href="Champions/ChampionSearch.jsp">Buscar campeon y sus tips por stat</a>
     <br/>
     <br/>
     	<a href="Items/ItemList.jsp">Listado de Items</a>

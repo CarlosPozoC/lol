@@ -44,7 +44,7 @@ public class Champion_statsRepository {
         ResultSet rs = null;
 
         try{
-            statement = conn.prepareStatement("select * from champion_stats.champion where stat_name=? and stat_value??");
+            statement = conn.prepareStatement("select champion from champion_stats where stat_name= ? and stat_value ? ?");
             statement.setString(1, stat_name);
             statement.setString(2, condition);
             statement.setInt(3, stat_value);

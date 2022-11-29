@@ -1,5 +1,6 @@
 /home/carlos/eclipse-workspace/lol/src/main/java/servlet/champions/ChampionListServlet.java
 /home/carlos/eclipse-workspace/lol/src/main/java/servlet/champions/ChampionDeleteServlet.java
+/home/carlos/eclipse-workspace/lol/src/main/java/servlet/champions/ChampionSearchServlet.java
 /home/carlos/eclipse-workspace/lol/src/main/java/repositories/Champion_tipsRepository.java
 /home/carlos/eclipse-workspace/lol/src/main/java/servlet/champion_abilities/Champion_abilitiesInsertServlet.java
 /home/carlos/eclipse-workspace/lol/src/main/java/servlet/champion_abilities/Champion_abilitiesDeleteServlet.java
